@@ -1,9 +1,28 @@
 import sqlite3
 
-def create_table():
-    conn = sqlite3.connect('td2.db')
-    cur = conn.cursor()
+conn = sqlite3.connect('td2.db')
+cur = conn.cursor()
 
+def close():
+    conn.close()
+    cur.close()
+
+def connect():
+    conn = sqlite3.connect('td2.db')
+    conn.cursor()
+
+
+
+def ins(what, js):
+    if what == 'stats':
+        cur.executemany(
+        '''INSERT INTO player VALUES (:_id, :playerName, :secondsPlayed, :gamesPlayed)
+           ON CONFLICT DO NOTHING;
+        ''', js)
+        conn.commit()
+
+def create_table():
+    
     cur.execute('''
     CREATE TABLE IF NOT EXISTS player (id TEXT PRIMARY KEY, playerName TEXT UNIQUE, secondsPlayed INTEGER, gamesPlayed INTEGER);
     ''')
@@ -18,6 +37,3 @@ def create_table():
     PRIMARY KEY(player_id, match_id)
     );
     ''')
-
-    cur.close()
-    conn.close()
