@@ -30,7 +30,7 @@ def ins(what, js):
     elif what == 'match':
         fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
     else:
-        fields = '(:playerId, :matchId, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
+        fields = '(:playerId, :match_id, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
     
     cur.executemany(
     f'''INSERT INTO {what} VALUES {fields}
