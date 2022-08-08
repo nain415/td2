@@ -15,11 +15,17 @@ def connect():
 
 def ins(what, js):
     if what == 'stats':
-        cur.executemany(
-        '''INSERT INTO player VALUES (:_id, :playerName, :secondsPlayed, :gamesPlayed)
-           ON CONFLICT DO NOTHING;
-        ''', js)
-        conn.commit()
+        fields = '(:_id, :playerName, :secondsPlayed, :gamesPlayed)'
+    elif what == 'match':
+        fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
+    else:
+        fields = '(:playerId, :matchId, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, firstWaveFighters)'
+    
+    cur.executemany(
+    f'''INSERT INTO {what} VALUES {fields}
+        ON CONFLICT DO NOTHING;
+    ''', js)
+    conn.commit()
 
 def create_table():
     
