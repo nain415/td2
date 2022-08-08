@@ -11,6 +11,17 @@ def connect():
     conn = sqlite3.connect('td2.db')
     conn.cursor()
 
+#enter this to end any transaction
+def commit():
+    conn.commit()
+
+def rollback():
+    conn.execute('ROLLBACK')
+
+#enter this before beginning any transaction
+def begin():
+    conn.execute('BEGIN')
+
 
 
 def ins(what, js):
@@ -19,13 +30,12 @@ def ins(what, js):
     elif what == 'match':
         fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
     else:
-        fields = '(:playerId, :matchId, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, firstWaveFighters)'
+        fields = '(:playerId, :matchId, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
     
     cur.executemany(
     f'''INSERT INTO {what} VALUES {fields}
         ON CONFLICT DO NOTHING;
     ''', js)
-    conn.commit()
 
 def create_table():
     
