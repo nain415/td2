@@ -64,8 +64,19 @@ def shape_players(stats):
 def shape_matches():
     pass
 
+#expects list of matches
+#returns list of lists of dictionaries of players in match
+#also appends respective match id to each player in a match
 def shape_playerData(js):
-    pass
+    matches = [match['_id'] for match in js]
+    js = list(map(lambda dic: dic['playersData'], js))
+
+
+    for game in range(len(matches)):
+        for player in js[game]:
+            player.update({'match_id':matches[game]})
+    
+    return js
 
 #query limit of 1000
 #start and end are indices. 
@@ -122,9 +133,11 @@ def populate_matches(start_date, end_date, start_index, end_index):
 #subprocess of populate_matches
 #going to have to implement this with the help of pandas probably
 def populate_playerData(js):
-        return #WIP
-        js = list(map(lambda dic: dic['playersData'], js))
-        db_fns.ins('playersData', js)
+        
+        js = shape_playerData(js)
+
+        for ls in js:
+            db_fns.ins('playermatch', ls)
 
     
 
