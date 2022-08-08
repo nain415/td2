@@ -25,7 +25,7 @@ def begin():
 
 
 def ins(what, js):
-    if what == 'stats':
+    if what == 'player':
         fields = '(:_id, :playerName, :secondsPlayed, :gamesPlayed)'
     elif what == 'match':
         fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
