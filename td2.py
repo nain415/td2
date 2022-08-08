@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup as bs
 headers = {'x-api-key':config.API_KEY, 'accept': 'application/json'}
 API_URL = config.API_URL
 LIMIT = 1000
+LIMIT2 = 50
 
 
 #expects 1000 >= lim > 0 in integers
@@ -115,14 +116,14 @@ def populate_matches(start_date, end_date, start_index, end_index):
         for i in range(start_index,end_index+1):
             t = time.time()
 
-            matches = game_stats(start_date, end_date, offset=i*50)
+            matches = game_stats(start_date, end_date, offset=i*LIMIT2)
 
             db_fns.begin()
             db_fns.ins('match', matches)
             populate_playerData(matches)
             db_fns.commit()
 
-            print(f"inserted {i*LIMIT} to {(i+1)*LIMIT}.")
+            print(f"inserted {i*LIMIT2} to {(i+1)*LIMIT2}.")
             print(f"It took {time.time() - t} seconds taken to do this.")
 
     except Exception as e:
