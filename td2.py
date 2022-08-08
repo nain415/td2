@@ -78,7 +78,10 @@ def populate_players(start_index, end_index):
 
             players = player_stats(LIMIT, i*LIMIT)
             shape_players(players)
+
+            db_fns.begin()
             db_fns.ins('player', players)
+            db_fns.commit()
 
             print(f"inserted {i*LIMIT} to {(i+1)*LIMIT}.")
             print(f"It took {time.time() - t} seconds taken to do this.")
