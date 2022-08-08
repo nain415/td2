@@ -1,5 +1,5 @@
 import config
-import requests, pandas, time, datetime
+import requests, pandas, time
 import db_fns
 from bs4 import BeautifulSoup as bs
 
@@ -64,16 +64,16 @@ def shape_players(stats):
 def shape_matches():
     pass
 
-def shape_playerData():
+def shape_playerData(js):
     pass
 
 #query limit of 1000
-#start and end are indices.  will fetch in multiples of 1000
-#in range [start, end] inclusive.
+#start and end are indices. 
+#in range [start, end] inclusive.  indices may be regarded as in multiples of 1000
 #example populate_players(1,2)
-def populate_players(start, end):
+def populate_players(start_index, end_index):
     try:
-        for i in range(start,end+1):
+        for i in range(start_index,end_index+1):
             t = time.time()
 
             players = player_stats(LIMIT, i*LIMIT)
@@ -89,15 +89,20 @@ def populate_players(start, end):
 
 
 #query limit of 50
-
-def populate_matches(start_date, end_date, start, end):
+#in range [start, end] inclusive.  indices may be regarded as in multiples of 50
+#expects YYYY-MM-DD for start_date and end_date
+#expects HH-MM-SS for start_time and end_time, optional
+#lim > 0 in integers, optional
+#offset > 0 in integers, optional
+#example 
+def populate_matches(start_date, end_date, start_index, end_index):
     try:
-        for i in range(start,end+1):
+        for i in range(start_index,end_index+1):
             t = time.time()
 
-            matches = game_stats(start_date, end_date, LIMIT, end)
-            shape_players(matches)
+            matches = game_stats(start_date, end_date, offset=i*50)
             db_fns.ins('match', matches)
+            populate_playerData(matches)
 
             print(f"inserted {i*LIMIT} to {(i+1)*LIMIT}.")
             print(f"It took {time.time() - t} seconds taken to do this.")
@@ -106,19 +111,16 @@ def populate_matches(start_date, end_date, start, end):
         print(e)
         print('Done populating.  Program crashed.')
 
+
 #subprocess of populate_matches
+#going to have to implement this with the help of pandas probably
 def populate_playerData(js):
-        db_fns.ins('playerData', js)
-
+        return #WIP
+        js = list(map(lambda dic: dic['playersData'], js))
+        db_fns.ins('playersData', js)
 
     
-#db_fns.ins('player', first_player[0])
-#print(first_player)
+
     
 
-
-
-#res = game_stats('2022-07-01', '2022-07-2', 100)
-# profile = player_byname("Cervixsmasher")
-# stats = player_stats(profile['_id'])
-# print(stats)
+#populate_matches('2022-08-01', 2022-08-08, 0, 0)
