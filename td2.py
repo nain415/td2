@@ -89,6 +89,7 @@ def populate_players(start_index, end_index):
     except Exception as e:
         print(e)
         print('Done populating.  Program crashed.')
+        db_fns.close()
 
 
 #query limit of 50
@@ -104,8 +105,11 @@ def populate_matches(start_date, end_date, start_index, end_index):
             t = time.time()
 
             matches = game_stats(start_date, end_date, offset=i*50)
+
+            db_fns.begin()
             db_fns.ins('match', matches)
             populate_playerData(matches)
+            db_fns.commit()
 
             print(f"inserted {i*LIMIT} to {(i+1)*LIMIT}.")
             print(f"It took {time.time() - t} seconds taken to do this.")
