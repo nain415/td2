@@ -10,7 +10,7 @@ LIMIT = 1000
 
 #expects 1000 >= lim > 0 in integers
 #offset > 0 in integers, optional
-def player_stats(lim, offset=""):
+def player_stats(lim=LIMIT, offset=""):
     if offset:
         URL = f"{API_URL}/players/stats?limit={lim}&offset={offset}"
     else:
