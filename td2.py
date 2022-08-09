@@ -121,7 +121,6 @@ def populate_matches(start_date, end_date, start_index, end_index):
 
             db_fns.begin()
             db_fns.ins('match', matches)
-            db_fns.commit()
             populate_playerData(matches)
             db_fns.commit()
 
