@@ -114,7 +114,6 @@ def populate_players(start_index, end_index):
 #example 
 def populate_matches(start_date, end_date, start_index, end_index, tries=0):
     val = 0
-    count_games = LIMIT
 
     try:
         for i in range(start_index,end_index+1):
@@ -124,8 +123,12 @@ def populate_matches(start_date, end_date, start_index, end_index, tries=0):
 
             db_fns.begin()
             db_fns.ins('match', matches)
+            db_fns.commit()
+
+            db_fns.begin()
             populate_playerData(matches)
             db_fns.commit()
+
             tries=0
 
             print(f"inserted {i*LIMIT2} to {(i+1)*LIMIT2}.")
@@ -143,6 +146,7 @@ def populate_matches(start_date, end_date, start_index, end_index, tries=0):
             db_fns.rollback()
             time.sleep(SLEEP_TIME)
             populate_matches(start_date, end_date, val, end_index, tries+1)
+            print('Retrying...')
 
 #subprocess of populate_matches
 #going to have to implement this with the help of pandas probably
