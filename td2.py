@@ -112,10 +112,11 @@ def populate_players(start_index, end_index):
 #offset > 0 in integers, optional
 #example 
 def populate_matches(start_date, end_date, start_index, end_index):
+    val = 0
     try:
         for i in range(start_index,end_index+1):
+            val = i
             t = time.time()
-
             matches = game_stats(start_date, end_date, offset=i*LIMIT2)
 
             db_fns.begin()
@@ -129,7 +130,8 @@ def populate_matches(start_date, end_date, start_index, end_index):
     except Exception as e:
         print(e)
         print('Done populating.  Program crashed.')
-
+        db_fns.rollback()
+        populate_matches(start_date, end_date, val, end_index)
 
 #subprocess of populate_matches
 #going to have to implement this with the help of pandas probably
