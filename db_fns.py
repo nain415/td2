@@ -26,27 +26,16 @@ def begin():
 
 def ins(what, js):
     if what == 'player':
-        #fields = '(:_id, :playerName, :secondsPlayed, :gamesPlayed)'
-        cur.executemany(
-        f'''INSERT INTO {what} VALUES (?,?,?,?)
-        ON CONFLICT DO NOTHING;
-        ''', (js['_id'], js[':playerName'], js[':secondsPlayed'], js['gamesPlayed']))
-    
+        fields = '(:_id, :playerName, :secondsPlayed, :gamesPlayed)'
     elif what == 'match':
-        #fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
-        cur.executemany(
-        f'''INSERT INTO {what} VALUES (?,?,?,?)
-        ON CONFLICT DO NOTHING;
-        ''', (js['_id'], js[':date'], js[':queueType'], js['endingWave'], js['gameLength'], js['gameElo']))
-    
-    
+        fields = '(:_id, :date, :queueType, :endingWave, :gameLength, :gameElo)'
     else:
-        #fields = '(:playerId, :match_id, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
-        cur.executemany(
-        f'''INSERT INTO {what} VALUES (?,?,?,?)
-        ON CONFLICT DO NOTHING;
-        ''', (js['playerId'], js[':match_id'], js[':playerSlot'], js['legion'], js['workers'], js['value'], js['gameResult'], js['classicElo'], js['chosenSpell'], js['firstWaveFighters']))
+        fields = '(:playerId, :match_id, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
     
+    cur.executemany(
+    f'''INSERT INTO {what} VALUES {fields}
+        ON CONFLICT DO NOTHING;
+    ''', js)
 
 def create_table():
     
