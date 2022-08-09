@@ -7,7 +7,7 @@ headers = {'x-api-key':config.API_KEY, 'accept': 'application/json'}
 API_URL = config.API_URL
 LIMIT = 1000
 LIMIT2 = 50
-SLEEP_TIME = 5
+SLEEP_TIME = 11
 THRESH = 5
 
 #expects 1000 >= lim > 0 in integers
@@ -140,13 +140,14 @@ def populate_matches(start_date, end_date, start_index, end_index, tries=0):
 
         #we might've exhausted the database.  try THRESH times to confirm
         if tries >= THRESH:
+            print(val)
             return val
         else:
         #continues program, assuming API returned 504 
             db_fns.rollback()
             time.sleep(SLEEP_TIME)
-            populate_matches(start_date, end_date, val, end_index, tries+1)
             print('Retrying...')
+            populate_matches(start_date, end_date, val, end_index, tries+1)
 
 #subprocess of populate_matches
 #going to have to implement this with the help of pandas probably
