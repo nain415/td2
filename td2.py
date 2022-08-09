@@ -8,6 +8,7 @@ API_URL = config.API_URL
 LIMIT = 1000
 LIMIT2 = 50
 SLEEP_TIME = 5
+THRESH = 3
 
 #expects 1000 >= lim > 0 in integers
 #offset > 0 in integers, optional
@@ -38,9 +39,9 @@ def game_stats(start_date, end_date, start_time='00-00-00', end_time='00-00-00',
     end_time = end_time.replace('-', '%3A')
 
     if offset:
-        URL = f"{API_URL}/games?limit={str(lim)}&offset={offset}&sortBy=date&sortDirection=1&dateBefore={end_date}%20{end_time}&dateAfter={start_date}%20{start_time}&includeDetails=true&countResults=false&queueType=Classic"
+        URL = f"{API_URL}/games?limit={str(lim)}&offset={offset}&sortBy=date&sortDirection=1&dateBefore={end_date}%20{end_time}&dateAfter={start_date}%20{start_time}&includeDetails=true&countResults=true&queueType=Classic"
     else:
-        URL = f"{API_URL}/games?limit={str(lim)}&sortBy=date&sortDirection=1&dateBefore={end_date}%20{end_time}&dateAfter={start_date}%20{start_time}&includeDetails=true&countResults=false&queueType=Classic"
+        URL = f"{API_URL}/games?limit={str(lim)}&sortBy=date&sortDirection=1&dateBefore={end_date}%20{end_time}&dateAfter={start_date}%20{start_time}&includeDetails=true&countResults=true&queueType=Classic"
 
     re = requests.get(URL, headers=headers)
     return re.json()
@@ -111,13 +112,20 @@ def populate_players(start_index, end_index):
 #lim > 0 in integers, optional
 #offset > 0 in integers, optional
 #example 
-def populate_matches(start_date, end_date, start_index, end_index):
+def populate_matches(start_date, end_date, start_index, end_index, tries=0):
     val = 0
+    count_games = 0
+
     try:
         for i in range(start_index,end_index+1):
             val = i
             t = time.time()
             matches = game_stats(start_date, end_date, offset=i*LIMIT2)
+            
+            #removes total # of games.  easier to put into here
+            if i == start_index:
+                count_games = matches[-1]
+            matches = matches[:-1]
 
             db_fns.begin()
             db_fns.ins('match', matches)
@@ -131,10 +139,19 @@ def populate_matches(start_date, end_date, start_index, end_index):
         print(e)
         print('Done populating.  Program crashed.')
 
-        #continues program, assuming API returned 504
-        db_fns.rollback()
-        time.sleep(SLEEP_TIME)
-        populate_matches(start_date, end_date, val, end_index)
+        #we might've exhausted the database.  try THRESH times to confirm
+        if (count_games <= val*LIMIT2):
+            if tries >= THRESH:
+                return
+            else:
+        #continues program, assuming API returned 504 
+                db_fns.rollback()
+                time.sleep(SLEEP_TIME)
+                populate_matches(start_date, end_date, val, end_index, tries+1)
+        else: 
+            db_fns.rollback()
+            time.sleep(SLEEP_TIME)
+            populate_matches(start_date, end_date, val, end_index)
 
 #subprocess of populate_matches
 #going to have to implement this with the help of pandas probably
