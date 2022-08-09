@@ -32,7 +32,6 @@ def ins(what, js):
     else:
         fields = '(:playerId, :match_id, :playerSlot, :legion, :workers, :value, :gameResult, :classicElo, :chosenSpell, :firstWaveFighters)'
     
-    print(js)
     cur.executemany(
     f'''INSERT INTO {what} VALUES {fields}
         ON CONFLICT DO NOTHING;
