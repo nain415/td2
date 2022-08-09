@@ -7,7 +7,7 @@ headers = {'x-api-key':config.API_KEY, 'accept': 'application/json'}
 API_URL = config.API_URL
 LIMIT = 1000
 LIMIT2 = 50
-
+SLEEP_TIME = 5
 
 #expects 1000 >= lim > 0 in integers
 #offset > 0 in integers, optional
@@ -121,6 +121,7 @@ def populate_matches(start_date, end_date, start_index, end_index):
 
             db_fns.begin()
             db_fns.ins('match', matches)
+            db_fns.commit()
             populate_playerData(matches)
             db_fns.commit()
 
@@ -130,7 +131,10 @@ def populate_matches(start_date, end_date, start_index, end_index):
     except Exception as e:
         print(e)
         print('Done populating.  Program crashed.')
+
+        #continues program, assuming API returned 504
         db_fns.rollback()
+        time.sleep(SLEEP_TIME)
         populate_matches(start_date, end_date, val, end_index)
 
 #subprocess of populate_matches
