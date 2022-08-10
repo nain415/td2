@@ -1,5 +1,6 @@
 # TD2 Analysis
 
 <p align="center">
-<img src=https://user-images.githubusercontent.com/78244259/183784267-4722a967-0165-4e2e-aa7b-9738d93d6634.png>
+<img src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
+
 </p>
