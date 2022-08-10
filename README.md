@@ -9,3 +9,14 @@
 2. ask how those can be implemented using my database
 3. consider visuals, draw visuals
 4. encode visuals
+
+
+SELECT playerName, ROUND(secondsPlayed / POW(60.0,2), 2) as hours_played, gamesPlayed, classicElo
+FROM
+	(SELECT *, row_number() OVER (PARTITION BY match_id) as n
+		FROM playermatch
+		JOIN player on player.id = playermatch.player_id
+		WHERE substr(player.playerName, 1, 1) LIKE 's'
+		GROUP BY playerName) results
+WHERE results.n > 1
+ORDER BY hours_played DESC, classicElo DESC
