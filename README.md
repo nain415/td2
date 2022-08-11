@@ -23,28 +23,7 @@ WHERE results.n > 1
 ORDER BY hours_played DESC, classicElo DESC
 
 
-SELECT * 
-FROM playermatch
-JOIN player on player.id = playermatch.player_id
-WHERE substr(player.playerName, 1, 1) LIKE 's'
-ORDER BY playerName
-GROUP BY playerName
-
-SELECT *, row_number() OVER (PARTITION BY match_id) as n
-FROM playermatch
-JOIN player on player.id = playermatch.player_id
-WHERE substr(player.playerName, 1, 1) LIKE 's'
-GROUP BY playerName
-HAVING n > 1;
-
-SELECT *
-FROM
-	(SELECT *, row_number() OVER (PARTITION BY match_id) as n
-		FROM playermatch
-		JOIN player on player.id = playermatch.player_id
-		WHERE substr(player.playerName, 1, 1) LIKE 's'
-		GROUP BY playerName) results
-WHERE results.n > 1
+--more
 
 SELECT *, ROUND(secondsPlayed / POW(60.0,2), 2) as hours_played
 FROM
@@ -56,21 +35,7 @@ FROM
 		
 WHERE results.n > 1
 
-
-SELECT *, COUNT(*), AVG(gameLength) / POW(60.0, 1), DATE(date) as dt
-FROM match
-GROUP BY dt
-
-SELECT COUNT(*) as count_games, ROUND(AVG(gameLength) / POW(60.0, 1)) as avg_game_len, DATE(date) as dt
-FROM match
-GROUP BY dt
-
-SELECT COUNT(*) as count_games, ROUND(AVG(gameLength) / POW(60.0, 1)) as avg_game_len, 
-CASE STRFTIME('%w', date)
-WHEN 0 THEN 'Sun' WHEN 1 THEN 'Mon' WHEN 2 THEN 'Tue' WHEN 3 THEN 'Wed' WHEN 4 THEN 'Thu' WHEN 5 THEN 'Fri' ELSE 'Sat' END as weekday
-FROM match
-GROUP BY dt
-ORDER BY count_games DESC;
+--even more
 
 SELECT COUNT(*) as count_games, ROUND(SUM(gameLength / POW(60.0, 2)), 2) as total_game_len,  ROUND(AVG(gameLength) / 60.0) as avg_game_len,
 	
@@ -86,12 +51,16 @@ FROM match
 GROUP BY dt
 ORDER BY count_games DESC;
 
+--moar
+
 SELECT * FROM (
 SELECT *, dense_rank () OVER (PARTITION BY dt ORDER BY num_occ DESC) rk FROM
 (SELECT *, COUNT(*) as num_occ, DATE(match.date) as dt
 FROM match
 GROUP BY endingWave, dt))
 WHERE rk < 4
+
+-moaar!!
 
 SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
