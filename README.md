@@ -39,7 +39,7 @@ FROM match
 GROUP BY dt
 ORDER BY count_games DESC;
 
-3 - top 3 openers for each day.  more window fns
+3 - top 3 openers for each day.  more window fns --GO DEEPER INTO WINRATE
 
 SELECT * FROM (
 SELECT *, dense_rank () OVER (PARTITION BY dt ORDER BY num_occ DESC) rk FROM
