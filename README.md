@@ -10,7 +10,7 @@
 3. consider visuals, draw visuals
 4. encode visuals
 
---get data about players, display some SQL skills
+1 - all players whose names start with 'S' or 's', and have a common game with another player who also is like that.  data about them
 
 SELECT playerName, ROUND(secondsPlayed / POW(60.0,2), 2) as hours_played, gamesPlayed, classicElo
 FROM
@@ -23,7 +23,7 @@ WHERE results.n > 1
 ORDER BY hours_played DESC, classicElo DESC
 
 
---more
+-stats about games played throughout each day of the first week of august 2022
 
 SELECT COUNT(*) as count_games, ROUND(SUM(gameLength / POW(60.0, 2)), 2) as total_game_len,  ROUND(AVG(gameLength) / 60.0) as avg_game_len,
 	
@@ -39,7 +39,7 @@ FROM match
 GROUP BY dt
 ORDER BY count_games DESC;
 
---moar
+--top 3 openers for each day
 
 SELECT * FROM (
 SELECT *, dense_rank () OVER (PARTITION BY dt ORDER BY num_occ DESC) rk FROM
@@ -48,7 +48,7 @@ FROM match
 GROUP BY endingWave, dt))
 WHERE rk < 4
 
--moaar!!
+-how many times people have played Pyro each day
 
 SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
