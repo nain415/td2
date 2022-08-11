@@ -39,7 +39,7 @@ FROM match
 GROUP BY dt
 ORDER BY count_games DESC;
 
-3 - top 3 openers for each day
+3 - top 3 openers for each day.  more window fns
 
 SELECT * FROM (
 SELECT *, dense_rank () OVER (PARTITION BY dt ORDER BY num_occ DESC) rk FROM
@@ -48,10 +48,14 @@ FROM match
 GROUP BY endingWave, dt))
 WHERE rk < 4
 
-4 - how many times people have played Pyro each day
+4 - how many times people have played Pyro each day.  having clause demo
 
 SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
 WHERE firstWaveFighters != ""
 GROUP BY firstWaveFighters, dt
 HAVING firstWaveFighters = 'Pyro'
+
+5 - cross join
+
+6 - self join
