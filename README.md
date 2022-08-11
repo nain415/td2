@@ -13,13 +13,8 @@
 1 (3d plot) - all players whose names start with 'S' or 's', and have a common game with another player who also is like that.  data about them
 
 SELECT playerName, ROUND(secondsPlayed / POW(60.0,2), 2) as hours_played, gamesPlayed, classicElo
-FROM
-	(SELECT *, row_number() OVER (PARTITION BY match_id) as n
-		FROM playermatch
-		JOIN player on player.id = playermatch.player_id
-		WHERE substr(player.playerName, 1, 1) LIKE 's'
-		GROUP BY playerName) results
-WHERE results.n > 1
+FROM s_players
+WHERE s_players.n > 1
 ORDER BY hours_played DESC, classicElo DESC
 
 -- FIX ON 1
