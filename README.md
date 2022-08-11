@@ -75,3 +75,10 @@ HAVING firstWaveFighters IN ('Pyro', 'Honeyflower')
 5 - cross join
 
 6 - self join
+SELECT * FROM
+(SELECT a.playerName, CASE WHEN a.playerSlot IN (1,2,3,4) THEN 1
+ELSE 2 END as A_Team, a.gameResult, b.playerName, CASE WHEN b.playerSlot IN (1,2,3,4) THEN 1
+ELSE 2 END as B_Team, b.gameResult
+FROM s_players a
+JOIN s_players b ON a.match_id = b.match_id)
+WHERE A_Team != B_Team
