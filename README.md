@@ -22,6 +22,22 @@ FROM
 WHERE results.n > 1
 ORDER BY hours_played DESC, classicElo DESC
 
+-- FIX ON 1
+CREATE TEMP VIEW s_matches AS
+SELECT DISTINCT match_id FROM (
+SELECT *, row_number() OVER (PARTITION BY match_id) as n
+		FROM playermatch
+		JOIN player on player.id = playermatch.player_id
+		WHERE substr(player.playerName, 1, 1) LIKE 's'
+		GROUP BY playerName)
+		WHERE n > 1
+		
+CREATE TEMP VIEW s_players AS		
+SELECT * FROM player
+JOIN s_matches ON playermatch.match_id = s_matches.match_id
+LEFT JOIN playermatch ON player.id = playermatch.player_id
+WHERE playerName LIKE 's%'
+
 
 2 (3 dif. coloured bar charts) - stats about games played throughout each day of the first week of august 2022
 
