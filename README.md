@@ -25,18 +25,6 @@ ORDER BY hours_played DESC, classicElo DESC
 
 --more
 
-SELECT *, ROUND(secondsPlayed / POW(60.0,2), 2) as hours_played
-FROM
-	(SELECT *, row_number() OVER (PARTITION BY match_id) as n
-		FROM playermatch
-		JOIN player on player.id = playermatch.player_id
-		WHERE substr(player.playerName, 1, 1) LIKE 's'
-		GROUP BY playerName) results
-		
-WHERE results.n > 1
-
---even more
-
 SELECT COUNT(*) as count_games, ROUND(SUM(gameLength / POW(60.0, 2)), 2) as total_game_len,  ROUND(AVG(gameLength) / 60.0) as avg_game_len,
 	
 	CASE CAST(STRFTIME('%w', date) AS INTEGER)
