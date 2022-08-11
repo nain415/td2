@@ -54,7 +54,7 @@ SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
 WHERE firstWaveFighters != ""
 GROUP BY firstWaveFighters, dt
-HAVING firstWaveFighters = 'Pyro'
+HAVING firstWaveFighters IN ('Pyro', 'Honeyflower')
 
 5 - cross join
 
