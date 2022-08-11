@@ -48,7 +48,7 @@ FROM match
 GROUP BY endingWave, dt))
 WHERE rk < 4
 
-4 - how many times people have played Pyro each day.  having clause demo
+4 - how many times people have played Pyro each day.  having clause demo.  maybe restructure this so we can have a select within a select?
 
 SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
