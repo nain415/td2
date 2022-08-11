@@ -23,7 +23,7 @@ WHERE results.n > 1
 ORDER BY hours_played DESC, classicElo DESC
 
 
--stats about games played throughout each day of the first week of august 2022
+2 - stats about games played throughout each day of the first week of august 2022
 
 SELECT COUNT(*) as count_games, ROUND(SUM(gameLength / POW(60.0, 2)), 2) as total_game_len,  ROUND(AVG(gameLength) / 60.0) as avg_game_len,
 	
@@ -39,7 +39,7 @@ FROM match
 GROUP BY dt
 ORDER BY count_games DESC;
 
---top 3 openers for each day
+3 - top 3 openers for each day
 
 SELECT * FROM (
 SELECT *, dense_rank () OVER (PARTITION BY dt ORDER BY num_occ DESC) rk FROM
@@ -48,11 +48,10 @@ FROM match
 GROUP BY endingWave, dt))
 WHERE rk < 4
 
--how many times people have played Pyro each day
+4 - how many times people have played Pyro each day
 
 SELECT *, COUNT(firstwaveFighters) as ct, DATE(date) as dt FROM match
 JOIN playermatch on match.id = playermatch.match_id
 WHERE firstWaveFighters != ""
 GROUP BY firstWaveFighters, dt
 HAVING firstWaveFighters = 'Pyro'
-
