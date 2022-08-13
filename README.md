@@ -5,7 +5,8 @@ Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-b
  
 </h2>
 
-https://user-images.githubusercontent.com/78244259/184516783-7b04ee2a-48b7-410c-86ed-aacbd2185f00.mp4
+<p align=center><img src=https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif></p>
+
 
 
 ##### Purpose
