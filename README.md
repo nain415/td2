@@ -18,7 +18,7 @@ This is a demonstration of my competency in SQL.  I pull data from an API, forma
 Each section in the Google Collaboratory notebook showcases command over different SQL features.
 
 ##### Project Structure
-- The Google Collaboratory notebook contains the SQL analysis of the database, for which the link is provided at the top of this README file.
+- The Google Collaboratory notebook contains the SQL analysis of the database.  The link is at the top of this README file.
 - The file db_fns.py is a collection of functions for writing to the database, named 'td2.db'.  
 - The file td2.py is the main program, which handles collecting data from this project's API, cleaning that data, and writing to the database through db_fns.py.
 
