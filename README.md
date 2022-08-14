@@ -1,4 +1,4 @@
-# SQL Analysis of [Legion TD 2](https://legiontd2.com)
+# SQL Analysis of Legion TD 2
 <h2 align="center">
 
 Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dwlAkNijM3ojzQPaMGoPHAqh7hWhJwxL?usp=sharing)
@@ -11,7 +11,7 @@ Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/
 </p>
 
 ##### Legion TD 2
-Legion TD 2 is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games, 2022)"
+[Legion TD 2](https://legiontd2.com) is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games, 2022)"
 
 ##### Purpose
 This is a demonstration of my competency in SQL.  I pull data from an API, format & clean the data, input the data into an SQLite database, and then visually analyse the data using several Python libraries, alongside Python's SQLite3 interface in Google Colaboratory.
