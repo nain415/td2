@@ -1,6 +1,4 @@
 *.py linguist-detectable=false
-*.pt linguist-detectable=true
 *.sql linguist-detectable=true
 
 *.sql linguist-language=sql
-*.pt linguist-language=python
