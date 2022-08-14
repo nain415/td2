@@ -23,7 +23,7 @@ Each section in the Google Collaboratory notebook showcases command over differe
 - The file td2.py is the main program, which handles collecting data from this project's API, cleaning that data, and writing to the database through db_fns.py.
 
 ##### Choosing an RDBMS
-I've chosen SQLite3 because it's light weight, and my data doesn't need future updates for this one-off analysis.  Otherwise, I'd have probably set up a PostgreSQL server on my spare computer, and ran a cron job for pulling data each day.  I'll reserve that for another time, because my objective here is primarily to display my competency in SQL.
+I've chosen SQLite3 because it's light weight, and my data doesn't need future updates for this one-off analysis.  A 2015 presentation on SQLite by Dr. Richard Hipp is inspirational for this choice.  Otherwise, I'd have probably set up a PostgreSQL server on my spare computer, and ran a cron job for pulling data each day.  I'll reserve that for another time, because my objective here is primarily to display my competency in SQL.
 
 ##### Designing the schema
 Designing my first database has been an illuminating task, because I need to consider making it both simple and efficient.  Simplicity is a concern because analyses on needlessly complicated databases will prove cumbersome.  Efficiency is a concern because some of the tables in here contain hundreds of thousands of records.
@@ -47,3 +47,5 @@ Issues that I face come from both data with missing fields, and error data resul
 [1] API Data-Source Documentation: https://swagger.legiontd2.com/
 
 [2] Query inspiration: www.sqlzoo.net
+
+[3] SQLite: The Database at the Edge of the Network with Dr. Richard Hipp: https://www.youtube.com/watch?v=Jib2AmRb_rk
