@@ -48,7 +48,7 @@ Issues that I face come from both data with missing fields, and error data resul
 
 ##### References & Links:
 
-[1] API data-Source documentation: https://swagger.legiontd2.com/
+[1] API data-source documentation: https://swagger.legiontd2.com/
 
 [2] Query inspiration: www.sqlzoo.net
 
