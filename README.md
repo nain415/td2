@@ -1,8 +1,8 @@
-# SQL Analysis of Legion TD 2
+# SQL Analysis of [Legion TD 2](https://legiontd2.com)
 <h2 align="center">
 
-Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dwlAkNijM3ojzQPaMGoPHAqh7hWhJwxL?usp=sharing)
- 
+Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dwlAkNijM3ojzQPaMGoPHAqh7hWhJwxL?usp=sharing)
+
 </h2>
 
 <p float="left">
@@ -13,9 +13,9 @@ Google Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-b
 
 
 ##### Purpose
-This is a demonstration of my competency in SQL.  I pull data from an API, format & clean the data, input the data into an SQLite database, and then visually analyse the data using several Python libraries, alongside Python's SQLite3 interface in Google Collaboratory.
+This is a demonstration of my competency in SQL.  I pull data from an API, format & clean the data, input the data into an SQLite database, and then visually analyse the data using several Python libraries, alongside Python's SQLite3 interface in Google Colaboratory.
 
-Each section in the Google Collaboratory notebook showcases command over different SQL features.
+Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
 ##### Project Structure
 - The Google Collaboratory notebook contains the SQL analysis of the database.  The link is at the top of this README file.
