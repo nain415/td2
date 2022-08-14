@@ -18,6 +18,9 @@ This is a demonstration of my competency in SQL.  I pull data from an API, forma
 
 Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
+##### Data Source
+The official Legion TD 2 public API.  I was provided an API key at their developer portal.  The process for doing this can be found at the [API document page for Legion TD 2](https://swagger.legiontd2.com/).
+
 ##### Project Structure
 - The Google Colaboratory notebook contains the SQL analysis of the database.  The link is at [the top of this README file.](#google-colaboratory-)
 - The file db_fns.py is a collection of functions for writing to the database that is named 'td2.db'.  
@@ -43,7 +46,7 @@ Choosing interesting questions that naturally involve disparate SQL techniques i
 
 Issues that I face come from both data with missing fields, and error data resulting from an overloaded API server.  To meet these challenges, defensive code, try-catch structures, and some detailed comments are present in td2.py's code.
 
-##### References:
+##### References & Links:
 
 [1] API Data-Source Documentation: https://swagger.legiontd2.com/
 
