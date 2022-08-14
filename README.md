@@ -25,7 +25,7 @@ Each section in the Google Colaboratory notebook showcases command over differen
 ##### Choosing an RDBMS
 I've chosen SQLite3 because it's light weight, and my data doesn't need future updates for this one-off analysis.  A 2015 presentation on SQLite by Dr. Richard Hipp is inspirational for this choice.  Otherwise, I'd have probably set up a PostgreSQL server on my spare computer, and ran a cron job for pulling data each day.  I'll reserve that for another time, because my objective here is primarily to display my competency in SQL.
 
-##### Designing the schema
+##### Designing the Schema
 Designing my first database has been an illuminating task, because I need to consider making it both simple and efficient.  Simplicity is a concern because analyses on needlessly complicated databases will prove cumbersome.  Efficiency is a concern because some of the tables in here contain hundreds of thousands of records.
 
 <p align="center">
