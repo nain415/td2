@@ -10,7 +10,8 @@ Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/
   <img src="https://user-images.githubusercontent.com/78244259/184517075-f4c40acf-e600-43ec-b8c6-ef45659d111f.png" width="375" /> 
 </p>
 
-
+#### Legion TD 2
+Legion TD2 is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games)"
 
 ##### Purpose
 This is a demonstration of my competency in SQL.  I pull data from an API, format & clean the data, input the data into an SQLite database, and then visually analyse the data using several Python libraries, alongside Python's SQLite3 interface in Google Colaboratory.
@@ -49,3 +50,5 @@ Issues that I face come from both data with missing fields, and error data resul
 [2] Query inspiration: www.sqlzoo.net
 
 [3] SQLite: The Database at the Edge of the Network with Dr. Richard Hipp: https://www.youtube.com/watch?v=Jib2AmRb_rk
+
+[4] Legion TD 2: https://store.steampowered.com/app/469600/Legion_TD_2__Multiplayer_Tower_Defense/
