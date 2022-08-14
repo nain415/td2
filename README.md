@@ -19,7 +19,7 @@ This is a demonstration of my competency in SQL.  I pull data from an API, forma
 Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
 ##### Project Structure
-- The Google Collaboratory notebook contains the SQL analysis of the database.  The link is at the top of this README file.
+- The Google Colaboratory notebook contains the SQL analysis of the database.  The link is at the top of this README file.
 - The file db_fns.py is a collection of functions for writing to the database, named 'td2.db'.  
 - The file td2.py is the main program, which handles collecting data from this project's API, cleaning that data, and writing to the database through db_fns.py.
 
@@ -33,11 +33,11 @@ Designing my first database has been an illuminating task, because I need to con
 <img src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
 </p>
 
-After much contemplation and some research, I've arrived at this schema involving two one-to-many relationships.  Designing it in this manner greatly eases the burden of developing SQL queries because the Join clauses are quite simple; those queries are also blazing fast: queries involving hundreds of thousands of records take *milliseconds*, such as queries ran on on the Player table.
+After much contemplation and some research, I've arrived at this schema involving two one-to-many relationships.  Designing it in this manner greatly eases the burden of developing SQL queries because the Join clauses are quite simple; those queries are also blazing fast: queries involving hundreds of thousands of records take milliseconds, such as queries ran on on the Player table.
 
 ##### Choosing Interesting Questions
 
-Choosing interesting questions that naturally involve disparate SQL techniques is another challenge for my presentation.  The questions that arise from the data are both influenced by my experience playing the game Legion TD 2 and SQLzoo's website, which is a website that contains various SQL tutorials.  I credit the tutorial-writers at SQLzoo for having given me some direction for the techniques I can portray in my queries.
+Choosing interesting questions that naturally involve disparate SQL techniques is another challenge for my presentation.  The questions that arise from the data are both influenced by my experience playing the game Legion TD 2 and SQLzoo's website, which is a website that contains various SQL tutorials.  I credit the tutorial-writers at SQLzoo for having given me some direction for the techniques I portray in my queries.
 
 ##### Dealing with Legacy Data from the API and 504 Errors!
 
