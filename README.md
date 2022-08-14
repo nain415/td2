@@ -19,7 +19,7 @@ This is a demonstration of my competency in SQL.  I pull data from an API, forma
 Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
 ##### Data Source
-The official Legion TD 2 public API.  I was provided an API key at their developer portal.  The process for doing this can be found at the [API document page for Legion TD 2](https://swagger.legiontd2.com/).
+The data is collected from the official Legion TD 2 public API.  I was provided an API key at their developer portal.  The process for doing this can be found at the [API document page for Legion TD 2](https://swagger.legiontd2.com/).
 
 ##### Project Structure
 - The Google Colaboratory notebook contains the SQL analysis of the database.  The link is at [the top of this README file.](#google-colaboratory-)
