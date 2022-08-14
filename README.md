@@ -7,7 +7,7 @@ Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/
 
 <p float="left">
   <img src="https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif" width="450" />
-  <img src="https://user-images.githubusercontent.com/78244259/184517075-f4c40acf-e600-43ec-b8c6-ef45659d111f.png" width="370" /> 
+  <img src="https://user-images.githubusercontent.com/78244259/184517075-f4c40acf-e600-43ec-b8c6-ef45659d111f.png" width="375" /> 
 </p>
 
 ##### Legion TD 2
