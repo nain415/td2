@@ -20,7 +20,7 @@ Each section in the Google Colaboratory notebook showcases command over differen
 
 ##### Project Structure
 - The Google Colaboratory notebook contains the SQL analysis of the database.  The link is at the top of this README file.
-- The file db_fns.py is a collection of functions for writing to the database, named 'td2.db'.  
+- The file db_fns.py is a collection of functions for writing to the database that is named 'td2.db'.  
 - The file td2.py is the main program, which handles collecting data from this project's API, cleaning that data, and writing to the database through db_fns.py.
 
 ##### Choosing an RDBMS
