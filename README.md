@@ -52,3 +52,5 @@ Issues that I face come from both data with missing fields, and error data resul
 [3] SQLite: The Database at the Edge of the Network with Dr. Richard Hipp: https://www.youtube.com/watch?v=Jib2AmRb_rk
 
 [4] AutoAttack Games: https://store.steampowered.com/app/469600/Legion_TD_2__Multiplayer_Tower_Defense/
+
+[5] Animated GIF source: https://www.youtube.com/watch?v=JA7sUGS6Fk4 (2:57,...)
