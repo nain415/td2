@@ -6,8 +6,7 @@ Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/
 </h2>
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif" width="450" />
-  <img src="https://user-images.githubusercontent.com/78244259/184550682-c090f207-bb9a-430d-afe0-0277ddbc9a4c.png" width="375" /> 
+<img src="https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif" width="55%" /><img src="https://user-images.githubusercontent.com/78244259/184550682-c090f207-bb9a-430d-afe0-0277ddbc9a4c.png" width="45%" /> 
 </p>
 
 
