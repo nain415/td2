@@ -1,7 +1,7 @@
 # SQL Analysis of Legion TD 2
-<h2 align="center">
+<h3 align="left">
 
-Google Colaboratory: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nZgowA33ApEjFH4lrfHTvsvcB-qCcK9k?usp=sharing)
+View the analysis here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nZgowA33ApEjFH4lrfHTvsvcB-qCcK9k?usp=sharing)
 
 </h2>
 
