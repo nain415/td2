@@ -1,4 +1,7 @@
-# SQL Analysis of Legion TD 2
+<h1 align="center">
+SQL Analysis of Legion TD 2
+</h1>
+
 <h3 align="left">
 
 View the analysis here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nZgowA33ApEjFH4lrfHTvsvcB-qCcK9k?usp=sharing)
