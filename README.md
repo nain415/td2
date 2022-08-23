@@ -2,15 +2,17 @@
 SQL Analysis of Legion TD 2
 </h1>
 
-<h3 align="left">
-
-View the analysis here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nZgowA33ApEjFH4lrfHTvsvcB-qCcK9k?usp=sharing)
-
-</h2>
-
 <p float="left">
-<img src="https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif" width="55%" /><img src="https://user-images.githubusercontent.com/78244259/184796640-7ed11279-e38f-40fb-acb7-180a4dea9d70.png" width="45%"/> 
-</p>
+<img src="https://user-images.githubusercontent.com/78244259/184516851-f0a3512e-fcc7-4e7a-a5fa-3bfdde512585.gif" width="55%" /><img src="https://user-images.githubusercontent.com/78244259/184796640-7ed11279-e38f-40fb-acb7-180a4dea9d70.png" width="45%"/> </p>
+
+<h3 align="left">
+  
+View the analysis here: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1nZgowA33ApEjFH4lrfHTvsvcB-qCcK9k?usp=sharing)
+  
+</h3>
+
+
+
 
 
 ##### Legion TD 2
