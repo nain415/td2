@@ -19,7 +19,7 @@ View the analysis here: [![Open In Colab](https://colab.research.google.com/asse
 [Legion TD 2](https://legiontd2.com) is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games, 2022)"
 
 ##### Purpose & Overview
-This is a demonstration of my competency in SQL.  I pull data from an API, format & clean the data, input the data into an SQLite database, query it with Python's SQLite3 interface, and visually analyse the data using several Python libraries in Google Colaboratory.
+This is a demonstration of my competency in forming SQL queries.  I pull data from an API, format & clean the data, input the data into an SQLite database, query it with Python's SQLite3 interface, and visually analyse the data using several Python libraries in Google Colaboratory.
 
 Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
