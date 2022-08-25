@@ -41,7 +41,7 @@ Designing this database has been an illuminating task, because I need to conside
 <img src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
 </p>
 
-After much contemplation and some research, I've arrived at this schema involving two one-to-many relationships.  Designing it in this manner greatly eases the burden of developing SQL queries because the Join clauses are quite simple; those queries are also blazing fast: queries involving hundreds of thousands of records take milliseconds, such as queries ran on on the Player table.
+After some contemplation about relationally modelling the data, I've arrived at this schema involving two one-to-many relationships.  Designing it in this manner greatly eases the burden of developing SQL queries because the Join clauses are quite simple; those queries are also blazing fast: queries involving hundreds of thousands of records take milliseconds, such as queries ran on on the Player table.
 
 ##### Choosing Interesting Questions
 
