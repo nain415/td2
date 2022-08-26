@@ -35,7 +35,7 @@ The data is collected from the official Legion TD 2 public API, which serves its
 I've chosen SQLite3 because it's light weight, and my data doesn't need future updates for this one-off analysis.  A 2015 presentation on SQLite by Dr. Richard Hipp is inspirational for this choice.  Otherwise, I'd have probably set up a PostgreSQL server, and ran a cron job for pulling data each day.  I'll reserve that for another time, because my objective here is primarily to display my competency in SQL.
 
 ##### Designing the Schema
-Designing this database has been an illuminating task, because I need to consider making it both simple and efficient.  Simplicity is a concern because analyses on a needlessly complicated database will prove cumbersome.  Efficiency is a concern because some of the tables in here contain hundreds of thousands of records.
+The storage needs to be designed with considerations for both simplicity and efficiency.  Simplicity is a concern because analyses on a needlessly complicated database will prove cumbersome.  Efficiency is a concern because some of the tables in here contain hundreds of thousands of records.
 
 <p align="center">
 <img src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
@@ -49,7 +49,7 @@ Choosing interesting questions that naturally involve disparate SQL techniques i
 
 ##### Dealing with Legacy Data from the API and 504 Errors!
 
-Issues that I face come from both data with missing fields, and error data resulting from an overloaded API server.  To meet these challenges, defensive code, try-catch structures, and some detailed comments are present in td2.py's code.
+Major issues that I faced came from both data with missing fields, and error data resulting from an overloaded API server.  To meet these challenges, defensive code, try-catch structures, and some detailed comments are present in td2.py's code.
 
 ##### References & Links:
 
