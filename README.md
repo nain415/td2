@@ -15,9 +15,6 @@ View the analysis here: [![Open In Colab](https://colab.research.google.com/asse
 
 
 
-##### Legion TD 2
-[Legion TD 2](https://legiontd2.com) is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games, 2022)"
-
 ##### Purpose & Overview
 This is a demonstration of my competence in forming SQL queries.  I pull data from an API, format & clean the data, input the data into an SQLite database, query it with Python's SQLite3 interface, and visually analyse the data using several Python libraries in Google Colaboratory.
 
@@ -50,6 +47,9 @@ Choosing interesting questions that naturally involve disparate SQL techniques i
 ##### Dealing with Legacy Data from the API and 504 Errors!
 
 Major issues that I faced came from both data with missing fields, and error data resulting from an overloaded API server.  To meet these challenges, defensive code, try-catch structures, and some detailed comments are present in td2.py's code.
+
+##### Legion TD 2
+[Legion TD 2](https://legiontd2.com) is "an infinitely replayable multiplayer and single-player tower defense. [Where players defend] against waves of enemies and destroy the enemy's king before they destroy yours. Legion TD 2 is a one-of-a-kind game of tactics, teamwork, and prediction. [Players may party] as 1-8 players. (AutoAttack Games, 2022)"
 
 ##### References & Links:
 
