@@ -101,7 +101,7 @@ def populate_players(start_index, end_index):
 
     except Exception as e:
         print(e)
-        print('Done populating.  Program crashed.')
+        print('Done populating.  Program terminated.')
         db_fns.close()
 
 
@@ -136,7 +136,7 @@ def populate_matches(start_date, end_date, start_index, end_index, tries=0):
 
     except Exception as e:
         print(e)
-        print('Done populating.  Program crashed.')
+        print('Done populating.  Program terminated.')
 
         #we might've exhausted the database.  try THRESH times to confirm
         if tries >= THRESH:
