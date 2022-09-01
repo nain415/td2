@@ -16,7 +16,7 @@ View the analysis here: [![Open In Colab](https://colab.research.google.com/asse
 
 
 ##### Purpose & Overview
-This is a demonstration of my competence in forming SQL queries.  I pull data from an API, format & clean the data, input the data into an SQLite database, query it with Python's SQLite3 interface, and visually analyse the data using several Python libraries in Google Colaboratory.
+This is a short demonstration of my competence in forming SQL queries.  I pull data from an API, format & clean the data, input the data into an SQLite database, query it with Python's SQLite3 interface, and visually analyse the data using several Python libraries in Google Colaboratory.
 
 Each section in the Google Colaboratory notebook showcases command over different SQL features.
 
