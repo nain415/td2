@@ -1,5 +1,5 @@
 <h1 align="center">
-SQL Analysis of Legion TD 2
+SQL Practice with TD 2
 </h1>
 
 <p float="left">
