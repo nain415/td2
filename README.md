@@ -31,14 +31,14 @@ The data is collected from the official Legion TD 2 public API, which serves its
 ##### Choosing an RDBMS
 I've chosen SQLite3 because it's light weight, and my data doesn't need future updates for this one-off analysis.  A 2015 presentation on SQLite by Dr. Richard Hipp is inspirational for this choice.  Otherwise, I'd have probably set up a PostgreSQL server, and ran a cron job for pulling data each day.  I'll reserve that for another time, because my objective here is primarily to display my competency in SQL.
 
-##### Designing the Schema
+##### Designing the Database
 The storage needs to be designed with considerations for both simplicity and efficiency.  Simplicity is a concern because analyses on a needlessly complicated database will prove cumbersome.  Efficiency is a concern because some of the tables in here contain hundreds of thousands of records.
 
 <p align="center">
-<img alt="ER diagram of schema" src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
+<img alt="ER diagram" src=https://user-images.githubusercontent.com/78244259/183784327-d59589e8-f450-4ed3-b1f2-a70e787a96dc.png>
 </p>
 
-After some contemplation about relationally modelling the data, I've arrived at this schema involving two one-to-many relationships.  Designing it in this manner greatly eases the burden of developing SQL queries because the Join clauses are quite simple; those queries are also blazing fast: queries involving hundreds of thousands of records take milliseconds, such as queries ran on on the Player table.
+After some contemplation about relationally modelling the data, I've arrived at these three entities connected by two one-to-many relationships.  It's only in the second normal form, but further normalization would only necessary if this database were to be maintained.
 
 ##### Choosing Interesting Questions
 
